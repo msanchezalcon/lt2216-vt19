@@ -29,6 +29,7 @@
 
 <!-- Menu -->
 <form id="menu">
+ <property name="bargein" value="false"/> <!-- disable bargein for this dialog -->
   <menu>
      <prompt>
        <break time="3600" />
