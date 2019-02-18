@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
-      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.vxml">
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.xml">
   <nomatch>
     I am sorry, I didn't understand.
   </nomatch>
