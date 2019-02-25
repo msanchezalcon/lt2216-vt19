@@ -15,14 +15,14 @@
   </one-of>
 </rule>
 
-<rule id="action">
+<rule id="action" scope="public">
   <one-of>
-     <item> on </item>
-     <item> off </item>
-     <item> turn on </item>
-     <item> turn off </item>
-     <item> open </item>
-     <item> close </item>
+     <item> on <tag>out="on";</tag></item>
+     <item> off <tag>out="off";</tag></item>
+     <item> ?please turn on <tag>out="on";</tag></item>
+     <item> ?please turn off <tag>out="off";</tag></item>
+     <item> ?please open <tag>out="open";</tag></item>
+     <item> ?please close <tag>out="close";</tag></item>
 
   </one-of>
 </rule>
