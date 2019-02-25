@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<vxml version="2.0">
+  <nomatch>
+    I didn't understand.
+  </nomatch>
+
+  <noinput>
+    You didn't say anything.
+  </noinput>
+
+  <form id="test">
+    <field name="foo">
+      <prompt>Say something!</prompt>
+      <grammar src="grammars/lab2.xml"/>
+    </field>
+    <filled>
+	<prompt>
+	  You said: <value expr="foo$.utterance"/>,
+	  with the interpretation <value expr="foo$.interpretation"/>
+	  and with a confidence of <value expr="foo$.confidence"/>
+	  <break time="2s"/>
+	</prompt>
+	<goto next="#funny"/> <
+    </filled>
+  </form>
+
+
+
+
+  <form id="funny"> <!-- Recognizing funny quotes -->
+    <field name="funnycommands">
+      <prompt>Say something!</prompt>
+      <grammar src="funny_comands.xml"/>
+    </field>
+    <filled>
+	<prompt>
+	  You said: <value expr="funnycomands$.utterance"/>,
+	  with the interpretation <value expr="funnycomands$.interpretation"/>
+	  and with a confidence of <value expr="funnycomands$.confidence"/>
+	  <break time="2s"/>
+	</prompt>
+	<goto next="#object"/>
+    </filled>
+  </form>
+
+  <form id="object"> <!-- Recognizing simple commands: object -->
+    <field name="house">
+      <prompt>Say something!</prompt>
+      <grammar src="recognizing_simple_commands.xml"/>
+    </field>
+    <filled>
+	<prompt>
+	  You said: <value expr="house$.interpretation.object"/>,
+	  with the interpretation <value expr="house$.interpretation.action"/>
+	  <break time="2s"/>
+	</prompt>
+	<goto next="#test"/>
+    </filled>
+  </form>
+
+
+
+</vxml>
