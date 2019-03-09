@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.xml">
+
+  <nomatch>
+    I am sorry, I didn't understand.
+  </nomatch>
+
+<!-- Info on delayed flights -->
+<form id="DelayedFlights"
+  <field name="Delays">
+ <prompt>
+   <break time="3600" />
+   Welcome to our information service on delayed flights. Currently all flights are on time.
+ </prompt>
+</form>
