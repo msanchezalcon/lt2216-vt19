@@ -1,0 +1,128 @@
+<?xml version= "1.0"? encoding="UTF-8" ?>
+ <grammar version="1.0" tag-format="semantics/1.0" root= "toplevel">
+
+
+  <rule id="toplevel" scope= "public">
+     <item>
+       ?I ?want ?to ?go from <ruleref uri="#fromcity"/>
+       ?I ?want ?to ?go to <ruleref uri="#tocity"/>
+       ?I ?want ?to ?go on <ruleref uri="#alldates"/>
+       <tag> out.toplevel =  out.fromcity=rules.fromcity + out.tocity=rules.tocity + out.alldates=rules.alldates </tag>
+     </item>
+  </rule>
+
+
+<rule id="tocity" scope= "public">
+  <item repeat="0-1">
+  <tag>out=rules.city</tag>
+</rule>
+
+<rule id="fromcity" scope= "public">
+  <item repeat="0-1">
+  <tag>out=rules.city</tag>
+</rule>
+
+
+  <rule id="city" scope= "public">
+  <one-of>
+     <item> gothenburg </item>
+     <item> paris </item>
+     <item> new york </item>
+     <item> tokyo </item>
+     <item> berlin </item>
+     <item> oslo </item>
+     <item> sevilla </item>
+     <item> madrid </item>
+     <item> barcelona </item>
+     <item> chicago </item>
+     <item> los angeles </item>
+     <item> copenhagen </item>
+  </one-of>
+</rule>
+
+
+<rule id="alldates" scope="public">
+<item repeat="0-1">
+  <ruleref uri="#weekday"/><tag> out.weekday=rules.weekday </tag>
+</item>
+<item repeat="0-1">
+  <ruleref uri="#month"/><tag> out.month=rules.month </tag>
+</item>
+<item repeat="0-1">
+  <ruleref uri="#date"/><tag> out.date=rules.date </tag>
+</item>
+
+</rule>
+
+  <rule id="date" scope="public">
+    <one-of>
+      <item> ?the 1st ?of </item>
+      <item> ?the 2nd ?of </item>
+      <item> ?the 3rd ?of </item>
+      <item> ?the 4th ?of </item>
+      <item> ?the 5th ?of </item>
+      <item> ?the 6th ?of </item>
+      <item> ?the 7th ?of </item>
+      <item> ?the 8th ?of </item>
+      <item> ?the 9th ?of </item>
+      <item> ?the 10th ?of </item>
+      <item> ?the 11th ?of </item>
+      <item> ?the 12th ?of </item>
+      <item> ?the 13th ?of </item>
+      <item> ?the 14th ?of </item>
+      <item> ?the 15th ?of </item>
+      <item> ?the 16th ?of </item>
+      <item> ?the 17th ?of </item>
+      <item> ?the 18th ?of </item>
+      <item> ?the 19th ?of </item>
+      <item> ?the 20th ?of </item>
+      <item> ?the 21st ?of </item>
+      <item> ?the 22nd ?of </item>
+      <item> ?the 23rd ?of </item>
+      <item> ?the 24th ?of </item>
+      <item> ?the 25th ?of </item>
+      <item> ?the 26th ?of </item>
+      <item> ?the 27th ?of </item>
+      <item> ?the 28th ?of </item>
+      <item> ?the 29th ?of </item>
+      <item> ?the 30th ?of </item>
+      <item> ?the 31st ?of </item>
+
+    </one-of>
+  </rule>
+
+  <rule id="month" scope= "public">
+  <one-of>
+     <item> january </item>
+     <item> february </item>
+     <item> march </item>
+     <item> april </item>
+     <item> may </item>
+     <item> june </item>
+     <item> july </item>
+     <item> august </item>
+     <item> september </item>
+     <item> october </item>
+     <item> november </item>
+     <item> december </item>
+  </one-of>
+
+
+<rule id="weekday" scope="public">
+  <one-of>
+     <item> monday </item>
+     <item> tuesday </item>
+     <item> wednesday </item>
+     <item> thursday </item>
+     <item> friday </item>
+     <item> saturday </item>
+     <item> sunday </item>
+     <item> tomorrow </item>
+     <item> today </item>
+
+  </one-of>
+
+
+   </rule>
+</grammar>
+</xml>
