@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+      <!-- Origin -->
+        <form id="askFrom">
+          <field name="fromcity">
+            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <prompt>
+      	      <break time="1000" />
+              What city are you leaving from?
+            </prompt>
+
+      	     <nomatch>
+               <break time="1000" />
+      	       Sorry, that city is not among the available options.
+      	       <reprompt/>
+      	     </nomatch>
+
+            <filled>
+            	<prompt>
+      	        Ok, you said from <value expr="fromcity$.utterance"/>
+                with the interpretation <value expr="fromcity$.interpretation"/>
+             	</prompt>
+            </filled>
+
+             <goto next="#askTo"/>
+
+         </field>
+         </form>
+
+
+      <!-- Destination -->
+        <form id="askTo">
+          <field name="tocity">
+            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <prompt>
+              <break time="1000" />
+              Where are you going?
+            </prompt>
+
+
+      	<nomatch>
+      	  Sorry, that city is not among the available options.
+      	  <reprompt/>
+      	</nomatch>
+
+            <filled>
+      	<prompt>
+      	  Ok, you said to <value expr="tocity$.utterance"/>
+          with the interpretation <value expr="tocity$.interpretation"/>
+      	</prompt>
+            </filled>
+
+              <goto next="#askDate" />
+
+         </field>
+        </form>
+
+      <!-- Date of departure origin-->
+        <form id="askDate">
+          <field name="alldates">
+            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <prompt>
+              <break time="1000" />
+      	When do you want to leave?
+            </prompt>
+
+
+              <nomatch>
+                <break time="1000" />
+      	  Sorry, that date is not among the available options.
+      	  <reprompt/>
+      	</nomatch>
+
+            <filled>
+      	      <prompt>
+                Ok, you said on <value expr="alldates$.utterance"/>
+                with the interpretation <value expr="alldates$.interpretation"/>
+              </prompt>
+            </filled>
+
+              <goto next="#askOneway" />
+
+          </field>
+        </form>
+
+      <!-- One way trip -->
+        <form id="askOneWay">
+          <field name="Oneway" type="boolean">
+            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <prompt>
+      	Is it a one way trip?
+            </prompt>
+
+          </field>
+            <if cond="Oneway==1"/>
+            <prompt>
+              Excellent.
+            </prompt>
+              <goto next="#askConfirmOneway"/>
+            <else/>
+              <goto next="#askReturn"/>
+            </if>
+
+        </form>
+
+      <!-- Confirm one way -->
+        <form id="askConfirmOneway">
+          <field name="ConfirmOneway" type="boolean">
+          <grammar src="Lab4_Dialogue_Grammar.xml"/>
+          <filled>
+            <prompt>
+              <break time="1000" />
+              Ok, do you want to go from <value expr="fromcity$.interpretation"> to <value expr="tocity$.interpretation"> on <value expr="alldates$.interpretation">?
+            </prompt>
+          </filled>
+
+
+             <nomatch>
+               <break time="1000" />
+      	      Sorry, I didn't hear you.
+      	      <reprompt/>
+      	     </nomatch>
+
+             <if cond="ConfirmOneway== 0"/>
+               <goto next="#fromcity"/>
+             <else/>
+             <filled>
+              <prompt>
+               <break time="1000" />
+              Ok, your flight has been booked from <value expr="fromcity$.interpretation"> to <value expr="tocity$.interpretation"> on <value expr="alldates$.interpretation">. Thank you for using our service.
+              </prompt>
+             </filled>
+             </if>
+          </field>
+        </form>
+
+      <!-- Return date -->
+        <form id="askReturn">
+          <field name="returndate" type="boolean">
+            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <prompt>
+              <break time="1000" />
+              What date do you want to return?
+            </prompt>
+
+
+             <nomatch>
+               <break time="1000" />
+               Sorry, that date is not among the available options.
+               <reprompt/>
+             </nomatch>
+           <filled>
+            <prompt>
+                  Ok, do you want to go from <value expr="fromcity$.interpretation"> to <value expr="tocity$.interpretation"> on <value expr="returndate$.interpretation">?
+            </prompt>
+          </filled>
+
+          <if cond="returndate== 0"/>
+            <goto next="#fromcity"/>
+          <else/>
+           <prompt>
+            Your flight has been booked! Thank you for using our service.
+           </prompt>
+          </if>
+
+
+
+      </field>
+      </form>
+
+      <clear/>
