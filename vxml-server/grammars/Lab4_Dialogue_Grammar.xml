@@ -13,7 +13,7 @@
 
 
 <rule id="tocity" scope= "public">
-  <item repeat="0-1">
+  <item repeat="0-1"> 
   <tag>out=rules.city</tag>
 </rule>
 
@@ -56,69 +56,68 @@
 
   <rule id="date" scope="public">
     <one-of>
-      <item> ?the 1st ?of </item>
-      <item> ?the 2nd ?of </item>
-      <item> ?the 3rd ?of </item>
-      <item> ?the 4th ?of </item>
-      <item> ?the 5th ?of </item>
-      <item> ?the 6th ?of </item>
-      <item> ?the 7th ?of </item>
-      <item> ?the 8th ?of </item>
-      <item> ?the 9th ?of </item>
-      <item> ?the 10th ?of </item>
-      <item> ?the 11th ?of </item>
-      <item> ?the 12th ?of </item>
-      <item> ?the 13th ?of </item>
-      <item> ?the 14th ?of </item>
-      <item> ?the 15th ?of </item>
-      <item> ?the 16th ?of </item>
-      <item> ?the 17th ?of </item>
-      <item> ?the 18th ?of </item>
-      <item> ?the 19th ?of </item>
-      <item> ?the 20th ?of </item>
-      <item> ?the 21st ?of </item>
-      <item> ?the 22nd ?of </item>
-      <item> ?the 23rd ?of </item>
-      <item> ?the 24th ?of </item>
-      <item> ?the 25th ?of </item>
-      <item> ?the 26th ?of </item>
-      <item> ?the 27th ?of </item>
-      <item> ?the 28th ?of </item>
-      <item> ?the 29th ?of </item>
-      <item> ?the 30th ?of </item>
-      <item> ?the 31st ?of </item>
-
+     <item> <item repeat="0-1"> the </item> 1st <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 2nd <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 3rd <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 4th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 5th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 6th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 7th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 8th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 9th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 10th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 11th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 12th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 13th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 14th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 15th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 16th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 17th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 18th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 19th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 20th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 21st <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 22nd <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 23rd <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 24th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 25th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 26th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 27th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 28th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 29th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 30th <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 31st <item repeat="0-1"> of </item> </item>
     </one-of>
   </rule>
 
   <rule id="month" scope= "public">
   <one-of>
-     <item> january </item>
-     <item> february </item>
-     <item> march </item>
-     <item> april </item>
-     <item> may </item>
-     <item> june </item>
-     <item> july </item>
-     <item> august </item>
-     <item> september </item>
-     <item> october </item>
-     <item> november </item>
-     <item> december </item>
+     <item repeat="0-1"> january </item>
+     <item repeat="0-1"> february </item>
+     <item repeat="0-1"> march </item>
+     <item repeat="0-1"> april </item>
+     <item repeat="0-1"> may </item>
+     <item repeat="0-1"> june </item>
+     <item repeat="0-1"> july </item>
+     <item repeat="0-1"> august </item>
+     <item repeat="0-1"> september </item>
+     <item repeat="0-1"> october </item>
+     <item repeat="0-1"> november </item>
+     <item repeat="0-1"> december </item>
   </one-of>
 
 
 <rule id="weekday" scope="public">
   <one-of>
-     <item> monday </item>
-     <item> tuesday </item>
-     <item> wednesday </item>
-     <item> thursday </item>
-     <item> friday </item>
-     <item> saturday </item>
-     <item> sunday </item>
-     <item> tomorrow </item>
-     <item> today </item>
+     <item repeat="0-1"> monday </item>
+     <item repeat="0-1"> tuesday </item>
+     <item repeat="0-1"> wednesday </item>
+     <item repeat="0-1"> thursday </item>
+     <item repeat="0-1"> friday </item>
+     <item repeat="0-1"> saturday </item>
+     <item repeat="0-1"> sunday </item>
+     <item repeat="0-1"> tomorrow </item>
+     <item repeat="0-1"> today </item>
 
   </one-of>
 
