@@ -3,10 +3,10 @@
 
 
   <rule id="toplevel" scope= "public">
-     <item>
-       ?I ?want ?to ?go from <ruleref uri="#fromcity"/>
-       ?I ?want ?to ?go to <ruleref uri="#tocity"/>
-       ?I ?want ?to ?go on <ruleref uri="#alldates"/>
+   <item repeat="0-1"> I want to go </item>
+      <item repeat="0-1">from <ruleref uri="#fromcity"/></item>
+      <item repeat="0-1">to <ruleref uri="#tocity"/></item>
+      <item repeat="0-1">on <ruleref uri="#alldates"/></item>
        <tag> out.toplevel =  out.fromcity=rules.fromcity + out.tocity=rules.tocity + out.alldates=rules.alldates </tag>
      </item>
   </rule>
