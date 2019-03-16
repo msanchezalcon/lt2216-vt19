@@ -7,7 +7,7 @@
       <item repeat="0-1">from <ruleref uri="#fromcity"/></item>
       <item repeat="0-1">to <ruleref uri="#tocity"/></item>
       <item repeat="0-1">on <ruleref uri="#alldates"/></item>
-       <tag> out.toplevel =  out.fromcity=rules.fromcity + out.tocity=rules.tocity + out.alldates=rules.alldates </tag>
+       <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates </tag>
      </item>
   </rule>
 
