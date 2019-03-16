@@ -4,7 +4,7 @@
       <!-- Origin -->
         <form id="askFrom">
           <field name="fromcity">
-            <grammar src="grammars/lab4.xml#city"/>
+            <grammar src="grammars/lab4.xml#fromcity"/>
             <prompt>
       	      <break time="1000" />
               What city are you leaving from?
@@ -32,7 +32,7 @@
       <!-- Destination -->
         <form id="askTo">
           <field name="tocity">
-            <grammar src="grammars/lab4.xml#city"/>
+            <grammar src="grammars/lab4.xml#tocity"/>
             <prompt>
               <break time="1000" />
               Where are you going?
