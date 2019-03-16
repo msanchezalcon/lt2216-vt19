@@ -3,7 +3,12 @@
 
 
   <rule id="toplevel" scope= "public">
+   <one-of>
    <item repeat="0-1"> I want to go </item>
+    <item repeat="0-1"> I wanna go </item>
+    <item repeat="0-1"> I want to travel </item>
+    <item repeat="0-1"> I would like to go </item>
+   </one-of>
       <item repeat="0-1">from <ruleref uri="#fromcity"/></item>
       <item repeat="0-1">to <ruleref uri="#tocity"/></item>
       <item repeat="0-1">on <ruleref uri="#alldates"/></item>
@@ -25,18 +30,18 @@
 
   <rule id="city" scope= "public">
   <one-of>
-     <item> gothenburg </item>
-     <item> paris </item>
-     <item> new york </item>
-     <item> tokyo </item>
-     <item> berlin </item>
-     <item> oslo </item>
-     <item> sevilla </item>
-     <item> madrid </item>
-     <item> barcelona </item>
-     <item> chicago </item>
-     <item> los angeles </item>
-     <item> copenhagen </item>
+     <item> gothenburg <tag>out.city="gothenburg"</tag></item>
+     <item> paris <tag>out.city="paris"</tag></item>
+     <item> new york <tag>out.city="new york"</tag></item>
+     <item> tokyo <tag>out.city="tokyo"</tag></item>
+     <item> berlin <tag>out.city="berlin"</tag></item>
+     <item> oslo <tag>out.city="oslo"</tag></item>
+     <item> seville <tag>out.city="seville"</tag></item>
+     <item> madrid <tag>out.city="madrid"</tag></item>
+     <item> barcelona <tag>out.city="barcelona"</tag></item>
+     <item> chicago <tag>out.city="chicago"</tag></item>
+     <item> los angeles <tag>out.city="los angeles"</tag></item>
+     <item> copenhagen <tag>out.city="copenhagen"</tag></item>
   </one-of>
 </rule>
 
@@ -56,68 +61,68 @@
 
   <rule id="date" scope="public">
     <one-of>
-     <item> <item repeat="0-1"> the </item> 1st <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 2nd <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 3rd <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 4th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 5th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 6th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 7th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 8th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 9th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 10th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 11th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 12th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 13th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 14th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 15th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 16th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 17th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 18th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 19th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 20th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 21st <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 22nd <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 23rd <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 24th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 25th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 26th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 27th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 28th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 29th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 30th <item repeat="0-1"> of </item> </item>
-     <item> <item repeat="0-1"> the </item> 31st <item repeat="0-1"> of </item> </item>
+     <item> <item repeat="0-1"> the </item> 1st <item repeat="0-1"> of </item> <tag>out.date="1st"</tag></item>
+     <item> <item repeat="0-1"> the </item> 2nd <item repeat="0-1"> of </item> <tag>out.date="2nd"</tag></item>
+     <item> <item repeat="0-1"> the </item> 3rd <item repeat="0-1"> of </item> <tag>out.date="3rd"</tag></item>
+     <item> <item repeat="0-1"> the </item> 4th <item repeat="0-1"> of </item> <tag>out.date="4th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 5th <item repeat="0-1"> of </item> <tag>out.date="5th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 6th <item repeat="0-1"> of </item> <tag>out.date="6th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 7th <item repeat="0-1"> of </item> <tag>out.date="7th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 8th <item repeat="0-1"> of </item> <tag>out.date="8th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 9th <item repeat="0-1"> of </item> <tag>out.date="9th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 10th <item repeat="0-1"> of </item> <tag>out.date="10th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 11th <item repeat="0-1"> of </item> <tag>out.date="11th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 12th <item repeat="0-1"> of </item> <tag>out.date="12th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 13th <item repeat="0-1"> of </item> <tag>out.date="13th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 14th <item repeat="0-1"> of </item> <tag>out.date="14th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 15th <item repeat="0-1"> of </item> <tag>out.date="15th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 16th <item repeat="0-1"> of </item> <tag>out.date="16th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 17th <item repeat="0-1"> of </item> <tag>out.date="17th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 18th <item repeat="0-1"> of </item> <tag>out.date="18th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 19th <item repeat="0-1"> of </item> <tag>out.date="19th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 20th <item repeat="0-1"> of </item> <tag>out.date="20th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 21st <item repeat="0-1"> of </item> <tag>out.date="21st"</tag></item>
+     <item> <item repeat="0-1"> the </item> 22nd <item repeat="0-1"> of </item> <tag>out.date="22nd"</tag></item>
+     <item> <item repeat="0-1"> the </item> 23rd <item repeat="0-1"> of </item> <tag>out.date="23rd"</tag></item>
+     <item> <item repeat="0-1"> the </item> 24th <item repeat="0-1"> of </item> <tag>out.date="24th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 25th <item repeat="0-1"> of </item> <tag>out.date="25th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 26th <item repeat="0-1"> of </item> <tag>out.date="26th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 27th <item repeat="0-1"> of </item> <tag>out.date="27th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 28th <item repeat="0-1"> of </item> <tag>out.date="28th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 29th <item repeat="0-1"> of </item> <tag>out.date="29th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 30th <item repeat="0-1"> of </item> <tag>out.date="30th"</tag></item>
+     <item> <item repeat="0-1"> the </item> 31st <item repeat="0-1"> of </item> <tag>out.date="31st"</tag></item>
     </one-of>
   </rule>
 
   <rule id="month" scope= "public">
   <one-of>
-     <item repeat="0-1"> january </item>
-     <item repeat="0-1"> february </item>
-     <item repeat="0-1"> march </item>
-     <item repeat="0-1"> april </item>
-     <item repeat="0-1"> may </item>
-     <item repeat="0-1"> june </item>
-     <item repeat="0-1"> july </item>
-     <item repeat="0-1"> august </item>
-     <item repeat="0-1"> september </item>
-     <item repeat="0-1"> october </item>
-     <item repeat="0-1"> november </item>
-     <item repeat="0-1"> december </item>
+     <item> january <tag>out.month="january"</tag></item>
+     <item> february <tag>out.month="february"</tag></item>
+     <item> march <tag>out.month="march"</tag></item>
+     <item> april <tag>out.month="april"</tag></item>
+     <item> may <tag>out.month="may"</tag></item>
+     <item> june <tag>out.month="june"</tag></item>
+     <item> july <tag>out.month="july"</tag></item>
+     <item> august <tag>out.month="august"</tag></item>
+     <item> september <tag>out.month="september"</tag></item>
+     <item> october <tag>out.month="october"</tag></item>
+     <item> november <tag>out.month="november"</tag></item>
+     <item> december <tag>out.month="december"</tag></item>
   </one-of>
 
 
 <rule id="weekday" scope="public">
   <one-of>
-     <item repeat="0-1"> monday </item>
-     <item repeat="0-1"> tuesday </item>
-     <item repeat="0-1"> wednesday </item>
-     <item repeat="0-1"> thursday </item>
-     <item repeat="0-1"> friday </item>
-     <item repeat="0-1"> saturday </item>
-     <item repeat="0-1"> sunday </item>
-     <item repeat="0-1"> tomorrow </item>
-     <item repeat="0-1"> today </item>
+     <item> monday <tag>out.weekday="monday"</tag></item>
+     <item> tuesday <tag>out.weekday="tuesday"</tag</item>
+     <item> wednesday <tag>out.weekday="wednesday"</tag</item>
+     <item> thursday <tag>out.weekday="thursday"</tag</item>
+     <item> friday <tag>out.weekday="friday"</tag</item>
+     <item> saturday <tag>out.weekday="saturday"</tag</item>
+     <item> sunday <tag>out.weekday="sunday"</tag</item>
+     <item> tomorrow <tag>out.weekday="tomorrow"</tag</item>
+     <item> today <tag>out.weekday="today"</tag</item>
 
   </one-of>
 
