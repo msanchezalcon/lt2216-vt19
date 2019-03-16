@@ -4,7 +4,7 @@
       <!-- Origin -->
         <form id="askFrom">
           <field name="fromcity">
-            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <grammar src="grammars/lab4.xml"/>
             <prompt>
       	      <break time="1000" />
               What city are you leaving from?
@@ -32,7 +32,7 @@
       <!-- Destination -->
         <form id="askTo">
           <field name="tocity">
-            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <grammar src="grammars/lab4.xml#tocity"/>
             <prompt>
               <break time="1000" />
               Where are you going?
@@ -59,7 +59,7 @@
       <!-- Date of departure origin-->
         <form id="askDate">
           <field name="alldates">
-            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <grammar src="grammars/lab4.xml#alldates"/>
             <prompt>
               <break time="1000" />
       	When do you want to leave?
@@ -87,7 +87,7 @@
       <!-- One way trip -->
         <form id="askOneWay">
           <field name="Oneway" type="boolean">
-            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <grammar src="grammars/lab4.xml"/>
             <prompt>
       	Is it a one way trip?
             </prompt>
@@ -107,7 +107,7 @@
       <!-- Confirm one way -->
         <form id="askConfirmOneway">
           <field name="ConfirmOneway" type="boolean">
-          <grammar src="Lab4_Dialogue_Grammar.xml"/>
+          <grammar src="grammars/lab4.xml"/>
           <filled>
             <prompt>
               <break time="1000" />
@@ -138,7 +138,7 @@
       <!-- Return date -->
         <form id="askReturn">
           <field name="returndate" type="boolean">
-            <grammar src="Lab4_Dialogue_Grammar.xml"/>
+            <grammar src="grammars/lab4.xml"/>
             <prompt>
               <break time="1000" />
               What date do you want to return?
