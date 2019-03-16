@@ -4,18 +4,40 @@
 
   <rule id="toplevel" scope= "public">
    <one-of>
-   <item repeat="0-1"> I want to go </item>
-    <item repeat="0-1"> I wanna go </item>
-    <item repeat="0-1"> I want to travel </item>
-    <item repeat="0-1"> I would like to go </item>
-   </one-of>
-      <item repeat="0-1">from <ruleref uri="#fromcity"/></item>
-      <item repeat="0-1">to <ruleref uri="#tocity"/></item>
-      <item repeat="0-1">on <ruleref uri="#alldates"/></item>
-       <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates </tag>
+   <item repeat="0-1"> I want to go</item>
+    <item repeat="0-1"> I wanna go</item>
+    <item repeat="0-1"> I want to travel</item>
+    <item repeat="0-1"> I would like to go</item>
+    </one-of>
+    
+   <one-of>
+    <item>
+    <ruleref uri="#fromcity"/></item>
+    <ruleref uri="#tocity"/></item>
+    <ruleref uri="#alldates"/></item>
+    <ruleref uri="#foodoption"/></item>
+    </one-of>
+       <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates; out.foodoption=rules.foodoption </tag>
      </item>
   </rule>
 
+
+<rule id="from" scope= "public">
+  <item repeat="0-1">from</item>
+    <item>
+      <ruleref uri="#city"/>
+      <tag>out=rules.city</tag>
+    </item>
+  </rule>
+  
+ 
+  <rule id="to" scope= "public">
+   <item repeat="0-1">to</item>
+    <item>
+      <ruleref uri="#city"/>
+      <tag>out=rules.city</tag>
+    </item>
+  </rule>
 
 <rule id="tocity" scope= "public">
   <item repeat="0-1"> 
@@ -27,6 +49,12 @@
   <tag>out=rules.city</tag>
 </rule>
 
+ 
+ 
+ 
+ 
+ 
+ 
 
   <rule id="city" scope= "public">
   <one-of>
@@ -127,6 +155,20 @@
   </one-of>
 
 
+   </rule>
+      
+  <rule id="foodoption" scope="public">  
+   <one-of>
+      <item repeat="0-1">having</item>
+      <item repeat="0-1">eating</item>
+      <item repeat="0-1">with</item>
+    </one-of>
+    <one-of>
+      <item>vegan food<tag>out.foodoption="vegan food"</tag></item>
+      <item>vegetarian food<tag>out.foodoption="vegetarian food"</tag></item>
+      <item>gluten free food<tag>out.foodoption="gluten free food"</tag></item>
+    </one-of>
+   
    </rule>
 </grammar>
 </xml>
