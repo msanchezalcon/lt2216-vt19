@@ -4,7 +4,7 @@
       <!-- Origin -->
         <form id="askFrom">
           <field name="fromcity">
-            <grammar src="grammars/lab4.xml"/>
+            <grammar src="grammars/lab4.xml#fromcity"/>
             <prompt>
       	      <break time="1000" />
               What city are you leaving from?
