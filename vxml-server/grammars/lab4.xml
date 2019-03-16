@@ -1,7 +1,7 @@
 <?xml version= "1.0"? encoding="UTF-8" ?>
  <grammar version="1.0" tag-format="semantics/1.0" root= "toplevel">
 
-
+<-- TOP LEVEL -->
   <rule id="toplevel" scope= "public">
    <one-of>
    <item repeat="0-1"> I want to go</item>
@@ -9,7 +9,6 @@
     <item repeat="0-1"> I want to travel</item>
     <item repeat="0-1"> I would like to go</item>
     </one-of>
-    
    <one-of>
     <item>
     <ruleref uri="#fromcity"/></item>
@@ -20,6 +19,17 @@
        <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates; out.foodoption=rules.foodoption </tag>
      </item>
   </rule>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <rule id="from" scope= "public">
@@ -39,10 +49,12 @@
     </item>
   </rule>
 
+
 <rule id="tocity" scope= "public">
   <item repeat="0-1"> 
   <tag>out=rules.city</tag>
 </rule>
+ 
 
 <rule id="fromcity" scope= "public">
   <item repeat="0-1">
@@ -51,11 +63,6 @@
 
  
  
- 
- 
- 
- 
-
   <rule id="city" scope= "public">
   <one-of>
      <item> gothenburg <tag>out.city="gothenburg"</tag></item>
@@ -84,9 +91,9 @@
 <item repeat="0-1">
   <ruleref uri="#date"/><tag> out.date=rules.date </tag>
 </item>
-
 </rule>
 
+ 
   <rule id="date" scope="public">
     <one-of>
      <item> <item repeat="0-1"> the </item> 1st <item repeat="0-1"> of </item> <tag>out.date="1st"</tag></item>
@@ -123,6 +130,8 @@
     </one-of>
   </rule>
 
+ 
+ 
   <rule id="month" scope= "public">
   <one-of>
      <item> january <tag>out.month="january"</tag></item>
@@ -138,6 +147,7 @@
      <item> november <tag>out.month="november"</tag></item>
      <item> december <tag>out.month="december"</tag></item>
   </one-of>
+ </rule>
 
 
 <rule id="weekday" scope="public">
@@ -151,24 +161,26 @@
      <item> sunday <tag>out.weekday="sunday"</tag</item>
      <item> tomorrow <tag>out.weekday="tomorrow"</tag</item>
      <item> today <tag>out.weekday="today"</tag</item>
-
   </one-of>
-
-
    </rule>
       
+      
+   <-- OPTIONAL SERVICE -->
   <rule id="foodoption" scope="public">  
    <one-of>
-      <item repeat="0-1">having</item>
-      <item repeat="0-1">eating</item>
+      <item repeat="0-1">and</item>
       <item repeat="0-1">with</item>
+      <item repeat="0-1">eating</item>
+      <item repeat="0-1">having</item>
     </one-of>
-    <one-of>
-      <item>vegan food<tag>out.foodoption="vegan food"</tag></item>
-      <item>vegetarian food<tag>out.foodoption="vegetarian food"</tag></item>
-      <item>gluten free food<tag>out.foodoption="gluten free food"</tag></item>
+   <one-of>
+     <item>food<tag>out.foodoption="food"</tag></item>
+      <item>lunch<tag>out.foodoption="lunch"</tag></item>
+      <item>breakfast<tag>out.foodoption="breakfast"</tag></item>
+      <item>dinner<tag>out.foodoption="dinner"</tag></item>
     </one-of>
-   
    </rule>
+      
+      
 </grammar>
 </xml>
