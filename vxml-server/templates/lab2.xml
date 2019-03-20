@@ -20,7 +20,7 @@
 	  and with a confidence of <value expr="foo$.confidence"/>
 	  <break time="2s"/>
 	</prompt>
-	<goto next="#funny"/> <
+	<goto next="#funny"/>
     </filled>
   </form>
 
@@ -30,7 +30,7 @@
   <form id="funny"> <!-- Recognizing funny quotes -->
     <field name="funnycommands">
       <prompt>Say something!</prompt>
-      <grammar src="funny_comands.xml"/>
+      <grammar src="grammars/funny_comands.xml"/>
     </field>
     <filled>
 	<prompt>
@@ -46,7 +46,7 @@
   <form id="object"> <!-- Recognizing simple commands: object -->
     <field name="house">
       <prompt>Say something!</prompt>
-      <grammar src="recognizing_simple_commands.xml"/>
+      <grammar src="grammars/recognizing_simple_commands.xml"/>
     </field>
     <filled>
 	<prompt>
