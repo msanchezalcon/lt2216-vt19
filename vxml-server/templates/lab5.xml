@@ -20,21 +20,18 @@
 
 
       <!-- Welcome message -->
-      <form id="welcome">
+      <form id="intro">
           <block>
-              <break time="1000"/>
-              <prosody volume="-6dB">
-              Welcome!
+              <prosody volume="-6dB"> Welcome! </prosody>
               Are you looking for fun and useless facts? Look no further!
               You've found the most in-depth random fun facts on the entire internet. Congratulations!
               So pull up a chair, get comfy - maybe with a glass of wine (we don't judge here!), and enjoy
               this awesome compilation of the most random, interesting and fun facts.
               We will introduce a question each time, each of them with two possible answers.
               Let's see how many you can guess correctly!
-              </prosody>
+            <goto next ="#menu"/> <!-- It does not go to the menu from here. Can you please check? -->
           </block>
-          <goto next ="#menu"/> <!-- It does not go to the menu from here!!!!!-->
-          </form>
+        </form>
           
           <!-- Menu -->
         <menu id="menu">
