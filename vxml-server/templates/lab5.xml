@@ -37,7 +37,7 @@
           <break time="1000" />
           <voice gender="male">
             You can choose either facts on animals or people. You can also exit the demo.
-            Please speak <prosody volume="-6dB">loud and clear</prosody>. Don't make me have a hard time in front of your classmates.
+            Please speak <prosody volume="-6dB">loud and clear</prosody>. Don't make me have a hard time in front of your classmates and professors.
             <prosody volume="+6dB">Alright!</prosody> choose one topic to start.</voice><enumerate/>
             <break time="2000" />
           </prompt>
