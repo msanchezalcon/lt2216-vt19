@@ -19,9 +19,9 @@
 
 
 
-      <!-- Welcome menu -->
-      <menu id="menu">
-          <prompt bargein="false">
+      <!-- Welcome message -->
+      <form id="welcome">
+          <block>
               <break time="1000"/>
               <prosody volume="-6dB">
               Welcome!
@@ -32,13 +32,18 @@
               We will introduce a question each time, each of them with two possible answers.
               Let's see how many you can guess correctly!
               </prosody>
-          </prompt>
+          </block>
+          <goto next ="#menu"/> <!-- It does not go to the menu from here!!!!!-->
+          </form>
+          
+          <!-- Menu -->
+        <menu id="menu">
           <prompt bargein="false">
           <break time="1000" />
-          <voice gender="male">
             You can choose either facts on animals or people. You can also exit the demo.
-            Please speak <prosody volume="-6dB">loud and clear</prosody>. Don't make me have a hard time in front of your classmates and professors.
-            <prosody volume="+6dB">Alright!</prosody> choose one topic to start.</voice><enumerate/>
+            Please speak <prosody volume="-6dB">loud and clear</prosody>. 
+            Don't make me have a hard time in front of your classmates and professors.
+            <prosody volume="+6dB">Alright!</prosody> choose one topic to start.<enumerate/>
             <break time="2000" />
           </prompt>
           <choice next="#animalfacts" accept="approximate">animals</choice>
@@ -47,8 +52,7 @@
           <nomatch>
           <break time="1000" />
           <prosody volume="+6dB">
-            What was that? 
-            Please choose a topic to start.
+            I didn't understand you. Please choose a topic to start.
           </prosody>
           <reprompt/>
           </nomatch>
@@ -67,7 +71,7 @@
           <prompt bargein="false">
           First question.
           <break time="1000" />
-            Snakes can help predict <prosody volume="-6dB">earthquakes</prosody>. yes or no?
+            Snakes can help predict <prosody volume="-6dB">earth-quakes</prosody>. yes or no?
           </prompt>
           <nomatch>
           <break time="1000" />
@@ -87,13 +91,13 @@
             <if cond="snakes == 1">
               <prompt> 
               <break time="1000" />
-              Correct! They can sense a coming earthquake from 121 km away,
+              Correct! They can sense a coming earth-quake from 121 km away,
               up to 5 days before it happens.
               </prompt>
               <else/>
               <prompt> 
               <break time="1000" />
-              Incorrect! They can sense a coming earthquake from 121 km away,
+              Incorrect! They can sense a coming earth-quake from 121 km away,
               up to 5 days before it happens. 
               </prompt>
             </if>
@@ -125,13 +129,15 @@
               <prompt> 
               <break time="1000" />
               Correct! A flock of crows is known as a murder.
-              Wow! No wonder why they look so creepy.
+              Wow! 
+              No wonder why they look so creepy.
               </prompt>
               <else/>
               <prompt> 
               <break time="1000" />
               Incorrect! A flock of crows is known as a murder.
-              Wow! No wonder why they look so creepy. 
+              Wow! 
+              No wonder why they look so creepy. 
               </prompt>
             </if>
           </filled>
@@ -148,15 +154,11 @@
           <option accept="approximate">Sweden</option>
             <nomatch>
             <break time="1000" />
-            <prosody volume="+6dB">
-              What was that? 
               Please choose either USA or Sweden.
-              </prosody>
              <reprompt/>
             </nomatch>
             <noinput>
             <break time="1000" />
-              Are you still with me? 
               Please say USA or Sweden.
             <reprompt/>
             </noinput>
@@ -164,7 +166,7 @@
                 <prompt>
                 <break time="1000" />
                 You said <value expr="browncows"/> and the correct answer is... USA!
-                I know 7% doesn't sound like a lot, but that actually works out at 16.4 million American adults.
+                I know 7% doesn't sound like a lot, but that actually works out at 16 million American adults.
                 </prompt>
             </filled>
           </field>
@@ -177,10 +179,8 @@
           </prompt>
           <nomatch>
           <break time="1000" />
-          <prosody volume="+6dB">
             What was that? 
             You can only say either yes or no.
-            </prosody>
            <reprompt/>
           </nomatch>
           <noinput>
@@ -246,16 +246,12 @@
           </prompt>
           <nomatch>
           <break time="1000" />
-            What was that? 
-            You can only say either yes or no. 
-            Is it too much to ask?
+            Please say yes or no.
            <reprompt/>
           </nomatch>
           <noinput>
           <break time="1000" />
-            Are you still with me? 
-            Please choose yes or no. 
-            Is it too much to ask?
+            Are you still with me?
           <reprompt/>
           </noinput>
           <filled>
@@ -271,7 +267,7 @@
               Yes, but no! Technically they <emphasis>could</emphasis> if they didn't live so far away from each other.
               Polar bears live in the artic, whereas penguins usually live in Antarctica.
               </prompt>
-              <goto next="#menu"/> <!-- DOES NOT WORK -->
+              <goto next="#menu"/> 
             </if>
           </filled>
           </field>
@@ -286,7 +282,7 @@
               <prompt bargein="false">
               First question.
               <break time="1000" />
-              What happened after the premiere of "16 and pregnant"?. 
+              What happened after the screening of "sixteen and pregnant"?. 
               Please choose <emphasis>A or B</emphasis>. 
               Option A: it caused a new baby boom among teenagers.
               Option B: teen pregnancy rates dropped.
@@ -295,7 +291,7 @@
               <option accept="approximate"> B </option>
               <nomatch>
               <break time="1000" />
-                What was that? You can only say either A or B.
+                You can only say either A or B.
                <reprompt/>
               </nomatch>
               <noinput>
@@ -307,8 +303,7 @@
                 <prompt bargein="false">
                 <break time="1000" />
                 You said <value expr="pregnant"/> and the correct answer is... B! They dropped!
-                MTV may not have the most wholesome programs, but after the premier of this show,
-                teen pregnancy dropped by 5.7% within 18 months of the show airing.
+                After the screening of this show, teen pregnancy dropped by 6% within 18 months of the show airing.
                 </prompt>
               </filled>
             </field>
@@ -324,13 +319,11 @@
               <option accept="approximate"> china </option>
               <nomatch>
               <break time="1000" />
-                What was that? 
                 You can only say either <emphasis>brazil or china</emphasis>.
                <reprompt/>
               </nomatch>
               <noinput>
               <break time="1000" />
-                Are you still with me? 
                 Please choose brazil or china.
               <reprompt/>
               </noinput>
@@ -347,7 +340,7 @@
               <prompt bargein="false">
               Next question.
               <break time="1000" />
-              Why did J.K. Rowling chose the unusual name <emphasis>hermione</emphasis> ? 
+              Why did Jei Kei Rowling chose the unusual name <emphasis>hermione</emphasis> ? 
               Please choose <emphasis>A or B</emphasis>. 
               Option A: so young girls wouldn't be teased for being nerdy.
               Option B: she wanted this name to become trendy after her book.
@@ -356,20 +349,20 @@
               <option accept="approximate"> B </option>
               <nomatch>
               <break time="1000" />
-                What was that? You can only say either A or B.
+                You can only say either A or B.
                <reprompt/>
               </nomatch>
               <noinput>
               <break time="1000" />
-                Are you still with me? Please choose A or B.
+               Please choose A or B.
               <reprompt/>
               </noinput>
               <filled>
                 <prompt bargein="false">
                 <break time="1000" />
                 You said <value expr="hermione"/> and the correct answer is... A! The name hermione
-                came from the Shakespeare's work called a winter's tale. Rowling says when she chose the name, she didn't want
-                a lot of fairly hard-working little girls to be teased if ever the book was published.
+                Rowling says when she chose the name, she didn't want a lot of hard-working little girls to be teased 
+                if ever the book was published.
                 </prompt>
               </filled>
             </field>
@@ -388,12 +381,12 @@
               <option accept="approximate"> B </option>
               <nomatch>
               <break time="1000" />
-                What was that? You can only say either A or B.
+                You can only say either A or B.
                <reprompt/>
               </nomatch>
               <noinput>
               <break time="1000" />
-                Are you still with me? Please choose A or B.
+              Please choose A or B.
               <reprompt/>
               </noinput>
               <filled>
@@ -403,7 +396,7 @@
                 A strong gust of wind blew her to the floor below. 
                 The worst injury she sustained was a fractured hip. <emphasis>Oh my god!</emphasis>
                 </prompt>
-                <goto next="#menu"/>  <!-- ERROR RIGHT BEFORE THIS--> <!-- back to main menu to choose topic -->
+                <goto next="#menu"/>  
               </filled>
             </field> 
           
@@ -425,7 +418,6 @@
           </nomatch>
           <noinput>
           <break time="1000" />
-            Are you still with me? 
             Please say yes or no.
           <reprompt/>
           </noinput>
@@ -433,12 +425,12 @@
             <if cond="exit == 1">
               <prompt> 
               <break time="1000" />
-              Alright! See you soon! 
+              Alright! I wanted to leave anyways! I need to catch a bus. See you soon! 
               </prompt>
               <exit/>
               <prompt> 
               <break time="1000" />
-              Okay! Let's go back to the start. 
+              Excellent! Let's go back to the start. 
               </prompt>
               <goto next ="#menu"/>
             </if>
@@ -447,3 +439,8 @@
         </form>
 
     </vxml>
+
+
+
+
+              
