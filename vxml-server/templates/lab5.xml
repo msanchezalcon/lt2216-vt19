@@ -20,7 +20,7 @@
 
 
       <!-- Welcome menu -->
-      <menu id="welcome">
+      <menu id="menu">
           <prompt bargein="false">
               <break time="1000"/>
               <prosody volume="-6dB">
