@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" application="lab5.xml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+<!-- Insert menu here -->
+
+
+<!-- Welcome -->
+      <form id="welcome">
+          <block>
+              <break time="1000"/>
+              Looking for fun facts? Look no further!
+              You've found the most in-depth random fun facts on the entire internet. Congratulations!
+              So pull up a chair, get comfy - maybe with a glass of wine (we don't judge here!), and enjoy
+              this awesome compilation of the most random, interesting and fun facts.
+              We will introduce a question each time, each of them with two possible answers.
+              Let's see how many you can guess correctly!
+          </block>
+        </form>
+</vxml>
