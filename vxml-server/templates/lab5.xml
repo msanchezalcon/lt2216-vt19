@@ -29,7 +29,7 @@
               this awesome compilation of the most random, interesting and fun facts.
               We will introduce a question each time, each of them with two possible answers.
               Let's see how many you can guess correctly!
-            <goto next ="#menu"/> <!-- It does not go to the menu from here. Can you please check? -->
+            <goto next ="#menu"/> <!-- hopefully it jumps into menu without problems! -->
           </block>
         </form>
           
