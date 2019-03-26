@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
-      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.xml">
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1.xml">
 
        <link next="lab1.xml">
         <grammar type="application/srgs+xml" root="root" version="1.0">
