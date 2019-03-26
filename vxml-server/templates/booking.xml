@@ -70,17 +70,22 @@
       	  Sorry, that city is not among the available options.
       	  <reprompt/>
       	</nomatch>
-
+              <filled>
               <assign name="to" expr="toField" />
-            <filled>
+            <if cond="to == from">
+            <prompt>
+                Your destination is the same as your origin. Try again.
+            </prompt>
+            <clear namelist="to"/>
+            <reprompt/>
+            <else/>
+            <goto next="#askDate" />
+            </if>
       	<prompt>
           <break time="1000" />
       	  Ok, to <value expr="toField">.
       	</prompt>
             </filled>
-
-              <goto next="#askDate" />
-
          </field>
         </form>
 
@@ -111,12 +116,10 @@
                 <break time="1000" />
                 Ok, on <value expr="askDate">
               </prompt>
-            </filled>
-
               <goto next="#askOneway" />
-
+               </filled>
           </field>
-        </form>
+         </form>
 
       <!-- One way trip -->
         <form id="askOneWay">
@@ -128,6 +131,7 @@
             <option>yes</option>
             <option>no</option>
           </field>
+            <filled>
 
             <assign name="Oneway" expr="askOneway" />
             <if cond="Oneway=='yes'"/>
@@ -135,8 +139,7 @@
             <else/>
               <goto next="#askReturn"/>
             </if>
-
-
+           </filled>
 
         </form>
 
@@ -200,7 +203,6 @@
                   <break time="1000" />
                   Ok, do you want to go from <value expr="toField"> to <value expr="fromField"> on <value expr="askReturn">?
             </prompt>
-          </filled>
           <option>yes</option>
           <option>no</option>
           <if cond="ReturnDate=='no'"/>
@@ -211,11 +213,11 @@
             Your flight has been booked! Thank you for using our service.
            </prompt>
           </if>
+                  </filled>
 
 
 
       </field>
       </form>
 
-      <clear/>
       </vxml>
