@@ -7,15 +7,18 @@
             <rule id="root" scope="public">start over</rule>
         </grammar>
     </link>
-  <nomatch>
+  
+   <nomatch>
     I am sorry, I didn't understand.
   </nomatch>
 
 <!-- Info on delayed flights -->
 <form id="DelayedFlights"
   <field name="Delays">
- <prompt>
-   <break time="3600" />
+ <block>
+   <break time="2000" />
    Welcome to our information service on delayed flights. Currently all flights are on time.
- </prompt>
+ <goto next="lab1"/>
+ </block>
 </form>
+</vxml>
