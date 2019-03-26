@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.xml">
-  <nomatch>
+  
+      <link next="lab1.vxml">
+   <grammar type="application/srgs+xml" root="root" version="1.0">
+     <rule id="root" scope="public">start over</rule>
+  </grammar>
+ </link>
+      
+      
+   <nomatch>
     I am sorry, I didn't understand.
   </nomatch>
 
   <noinput>
-    <break time="5000" />
+    <break time="2000" />
     I am sorry, I didn't hear you.
     <reprompt/>
   </noinput>
 
-  <!-- Data model -->
-  <var name="from" />
-  <var name="to" />
 
-  <!-- State machine -->
-  <form id="welcome">
-    <block>
-      <prompt>
-        <break time="3600" />
-        Hello there! Welcome to the flight booking service.
-      </prompt>
-      <goto next="#askFrom" />  <!-- Does this 'go to next' element need to be between any tags? -->
-    </block>
-  </form>
 
 <!-- Menu -->
 <form id="menu">
  <property name="bargein" value="false"/> <!-- disable bargein for this dialog -->
   <menu>
      <prompt>
-       <break time="3600" />
+       <break time="2000" />
+       Hello there! Welcome to the flight booking service.
        Please choose what to do next.
-          <enumerate/>
+       <enumerate/>
      </prompt>
      <choice next="Delays"> Information on delayed flights </choice>
      <choice next="fromField"> Booking a flight </choice>
      <noinput>
-       <break time="3600" />
+       <break time="2000" />
        Please choose one of the next options.
           <enumerate/>
      </noinput>
 </menu>
-</form>
+</vxml>
