@@ -8,6 +8,18 @@
      <rule id="root" scope="public">start over</rule>
   </grammar>
  </link>
+      
+      
+      <!-- State machine -->
+  <form id="welcome">
+    <block>
+      <prompt>
+        <break time="2000"/>
+        Hello there! Welcome to the flight booking service!
+      </prompt>
+      <goto next="#askFrom"/>
+    </block>
+  </form>
 
   <!-- disable bargein for this dialog -->
   <property name="bargein" value="false"/>
