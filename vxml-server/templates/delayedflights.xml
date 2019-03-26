@@ -2,7 +2,7 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="lab1voicexml.xml">
 
-       <link next="lab1.vxml">
+       <link next="lab1.xml">
         <grammar type="application/srgs+xml" root="root" version="1.0">
             <rule id="root" scope="public">start over</rule>
         </grammar>
