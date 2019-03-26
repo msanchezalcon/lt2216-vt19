@@ -14,7 +14,7 @@
   <form id="welcome">
     <block>
       <prompt>
-        <break time="2000"/>
+        <break time="1000"/>
         Hello there! Welcome to the flight booking service!
       </prompt>
       <goto next="#askFrom"/>
@@ -58,7 +58,7 @@
         <form id="askTo">
           <field name="toField">
             <prompt>
-              <break time="3600" />
+              <break time="1000" />
               Where are you going? The options are london, paris or new york.
             </prompt>
             <option>london</option>
