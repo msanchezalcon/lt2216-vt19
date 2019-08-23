@@ -16,61 +16,51 @@
     <ruleref uri="#tocity"/></item>
     <ruleref uri="#alldates"/></item>
     <ruleref uri="#foodoption"/></item>
-    </one-of>
        <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates; out.foodoption=rules.foodoption </tag>
      </item>
 
-<one-of>
+
     <item>
     <ruleref uri="#fromcity"/></item>
     <ruleref uri="#tocity"/></item>
     <ruleref uri="#alldates"/></item>
 
-    </one-of>
        <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.alldates=rules.alldates </tag>
      </item>
 
-<one-of>
     <item>
     <ruleref uri="#fromcity"/></item>
     <ruleref uri="#tocity"/></item>
     <ruleref uri="#foodoption"/></item>
-    </one-of>
        <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity; out.foodoption=rules.foodoption </tag>
      </item>
 
-<one-of>
     <item>
     <ruleref uri="#fromcity"/></item>
     <ruleref uri="#tocity"/></item>
-    </one-of>
       <tag> out.fromcity=rules.fromcity; out.tocity=rules.tocity</tag>
     </item>
 
-<one-of>
     <item>
     <ruleref uri="#fromcity"/></item>
     <ruleref uri="#alldates"/></item>
     <ruleref uri="#foodoption"/></item>
-    </one-of>
        <tag> out.fromcity=rules.fromcity; out.alldates=rules.alldates; out.foodoption=rules.foodoption </tag>
      </item>
 
-<one-of>
     <item>
     <ruleref uri="#tocity"/></item>
     <ruleref uri="#alldates"/></item>
-    </one-of>
        <tag> out.tocity=rules.tocity; out.alldates=rules.alldates </tag>
      </item>
 
-<one-of>
     <item>
     <ruleref uri="#fromcity"/></item>
     <ruleref uri="#alldates"/></item>
-    </one-of>
        <tag> out.fromcity=rules.fromcity; out.alldates=rules.alldates </tag>
      </item>
+   
+   </one-of>
 
   </rule>
 
@@ -227,4 +217,3 @@
 
 
 </grammar>
-</xml>
