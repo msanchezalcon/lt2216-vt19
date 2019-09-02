@@ -50,28 +50,37 @@
             <!-- Origin -->
           <field name="fromcity">
             <grammar src="grammars/lab4.xml#fromcity" type="application/srgs+xml"/>
-            <prompt> Where are you going?</prompt>
-            <filled>
+            <prompt bargein="false"> 
+            From which city are you departing? Say something like Paris.
+            </prompt>
+            <nomatch>
+            Sorry, the city you chose is not available.
+            <reprompt/>
+            </nomatch>
             <prompt>
             Ok, you said to <value expr="fromcity"/>
             </prompt>
-            </filled>
             </field>
+                
       <!-- Destination -->
           <field name="tocity">
             <grammar src="grammars/lab4.xml#tocity" type="application/srgs+xml"/>
-            <prompt> Where are you going?</prompt>
-            <filled>
+            <prompt bargein="false"> 
+             Where are you going?
+            </prompt>
+            <nomatch>
+            Sorry, the city you chose is not available.
+            <reprompt/>
+            </nomatch>
       	<prompt>
       	  Ok, you said to <value expr="tocity"/>
       	</prompt>
-            </filled>
          </field>
 
       <!-- Date of departure origin-->
           <field name="alldates">
             <grammar src="grammars/lab4.xml#alldates" type="application/srgs+xml"/>
-            <prompt>
+            <prompt bargein="false">
       	When do you want to leave?
             </prompt>
               <nomatch>
@@ -79,18 +88,16 @@
       	  Sorry, that date is not among the available options.
       	  <reprompt/>
       	</nomatch>
-            <filled>
       	      <prompt>
                 Ok, you said on <value expr="alldates"/>
               </prompt>
-            </filled>
           </field>
         </form>
 
       <!-- One way trip -->
           <field name="Oneway" type="boolean">
             <grammar src="grammars/lab4.xml" type="application/srgs+xml"/>
-            <prompt>
+            <prompt bargein="false">
       	Is it a one way trip?
             </prompt>
           </field>
@@ -109,11 +116,9 @@
         <form id="askConfirmOneway">
           <field name="ConfirmOneway" type="boolean">
           <grammar src="grammars/lab4.xml" type="application/srgs+xml"/>
-          <filled>
             <prompt>
               Ok, do you want to go from <value expr="fromcity"> to <value expr="tocity"> on <value expr="alldates">?
             </prompt>
-          </filled>
              <nomatch>
                <break time="1000" />
       	      Sorry, I didn't hear you.
@@ -154,6 +159,8 @@
            <prompt>
             Your flight has been booked! Thank you for using our service.
            </prompt>
+           <exit/>
+
           </if>
        </field>
        </form>
