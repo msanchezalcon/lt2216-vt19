@@ -4,10 +4,10 @@
 <!-- TOP LEVEL -->
   <rule id="toplevel" scope= "public">
    <one-of>
-   <item repeat="0-1"> I want to go</item>
-    <item repeat="0-1"> I wanna go</item>
-    <item repeat="0-1"> I want to travel</item>
-    <item repeat="0-1"> I would like to go</item>
+   <item repeat="0-1"> I want to go<tag>out="I want to go"</tag></item>
+    <item repeat="0-1"> I wanna go<tag>out="I wanna go"</tag></item>
+    <item repeat="0-1"> I want to travel<tag>out="I want to travel"</tag></item>
+    <item repeat="0-1"> I would like to go<tag>out="I would like to go"</tag></item>
     </one-of>
 
    <one-of>
@@ -202,10 +202,10 @@
    <!-- OPTIONAL SERVICE -->
   <rule id="foodoption" scope="public">
    <one-of>
-      <item repeat="0-1">and</item>
-      <item repeat="0-1">with</item>
-      <item repeat="0-1">eating</item>
-      <item repeat="0-1">having</item>
+      <item repeat="0-1">and<tag>out="and"</tag></item>
+      <item repeat="0-1">with<<tag>out="with"</tag>/item>
+      <item repeat="0-1">eating<tag>out="eating"</tag></item>
+      <item repeat="0-1">having<tag>out="having"</tag></item>
     </one-of>
    <one-of>
      <item>food<tag>out.foodoption="food"</tag></item>
