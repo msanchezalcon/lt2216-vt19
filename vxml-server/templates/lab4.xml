@@ -2,6 +2,11 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
+<noinput>
+  Sorry, I didn't hear you. Please repeat.
+</noinput>
+ 
+      
 <!-- Menu -->
 <form id="menu">
  <property name="bargein" value="false"/>
