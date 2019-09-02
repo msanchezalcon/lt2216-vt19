@@ -32,7 +32,7 @@
 
         <form id="flight">
           <field name="flight">
-            <grammar src="grammars/lab4.xml#fromcity" type="application/srgs+xml"/>
+            <grammar src="grammars/lab4.xml"/>
             <initial name="bypass_initial">
             <prompt>What city are you leaving from?</prompt>
       	     <nomatch count="1">
