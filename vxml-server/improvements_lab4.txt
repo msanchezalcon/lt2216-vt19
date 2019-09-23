@@ -1,0 +1,5 @@
+1. The system asks for input or repetition when the user is not detected or their answer does not match, with a few seconds to reorganize ideas
+2. Addition of a menu at the beginning so the user can choose what to do without having to listen to the whole prompt
+3. Back to menu option, allowing to start the booking whenever the user wants to
+4. Resolving conflict of departing and travelling to the same destination with the start option that goes back to the start
+5. Confirmation of booking specifying all details and requesting a yes or no from the user to close, otherwise back to booking to correct any mistakes.
