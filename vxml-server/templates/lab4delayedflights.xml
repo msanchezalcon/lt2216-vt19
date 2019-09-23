@@ -4,7 +4,7 @@
       xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
-  <form id="delayedFlights">
+  <form id="delayedflights">
     <block>
       <break time="2s"/>
       It seems like all flights are on time.
