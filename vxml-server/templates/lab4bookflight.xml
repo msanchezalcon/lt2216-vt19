@@ -92,7 +92,7 @@
     
     <filled>
       <if cond="conf == 'yes'">
-	<goto nextitem="booked"/>
+	<goto nextitem="bookedflight"/>
 	<elseif cond="conf =='no'"/>
 	<prompt> ok, let's go back to the start </prompt>
 	<goto next="#trip"/>
