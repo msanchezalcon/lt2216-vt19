@@ -5,7 +5,7 @@
 
   <noinput>
     <property name="timeout" value="3s"/>
-    Sorry,you didn't say anything.
+    Sorry, did you say anything?
     <reprompt/>
   </noinput>
 
