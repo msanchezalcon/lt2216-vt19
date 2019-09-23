@@ -11,7 +11,7 @@
 
   <nomatch>
     <property name="timeout" value="3s"/>
-    Sorry, I didn't understand that.
+    Sorry, I didn't catch that.
     <reprompt/>
   </nomatch>
 
