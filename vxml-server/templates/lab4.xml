@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+
+  <noinput>
+    <property name="timeout" value="3s"/>
+    Sorry,you didn't say anything.
+    <reprompt/>
+  </noinput>
+
+  <nomatch>
+    <property name="timeout" value="3s"/>
+    Sorry, I didn't understand that.
+    <reprompt/>
+  </nomatch>
+
+
+  <menu id="Menu">
+    <prompt bargein="false">
+      <break time="2s"/>
+      Hello there! Welcome to the flight booking service. Please choose what to do next.</prompt>
+    <choice next="lab4bookflight" accept="approximate">
+      book a flight
+    </choice>
+    <choice next="lab4delayedflights" accept="approximate">
+      information on delayed flights 
+    </choice>
+  </menu>
+</vxml>

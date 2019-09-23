@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vxml version="2.1"
+      xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+  <nomatch>
+    <property name="timeout" value="3s"/>
+    Sorry, I didn't catch that.
+    <reprompt/>
+  </nomatch>
+
+  <noinput>
+    <property name="timeout" value="3s"/>
+    Sorry, did you say anything?
+    <reprompt/>
+  </noinput>
+
+  <var name="from"/>
+  <var name="to"/>
+  <var name="day"/>
+  <var name="ret"/>
+  <var name="meal"/>
+   
+  <form id="welcome">
+    <block>
+      <prompt bargein="false">
+	<break time="1000" />
+	Hey there! Tell us about your trip. You can always say start or menu to go back to the start.
+	<break time="1s"/>
+      </prompt>
+      <goto next="#trip"/>
+    </block>
+  </form>
+
+  <form id="trip">
+    <block> alright, let's get started </block>
+    <grammar src="grammars/lab4.xml"/>
+    
+    <field name="departure">
+      <grammar src="grammars/lab4.xml#Origin"/>
+      <prompt count="2"> what city are you leaving from? </prompt>
+      <prompt count="3"> Please choose only between seville, chicago, paris, oslo, gothenburg, berlin, tokyo, madrid or new york. </prompt>
+    </field>  
+   
+   <field name="destination">
+      <grammar src="grammars/lab4.xml#Des"/>
+      <prompt> what city are you going to? </prompt>
+      <prompt count="2"> Please choose only between seville, chicago, paris, oslo, gothenburg, berlin, tokyo, madrid or new york. </prompt>
+    </field>
+    
+    <field name="date">
+      <grammar src="grammars/lab4.xml#DepartureDate"/>
+      <prompt> when are you leaving? </prompt>
+      <prompt count="2"> please choose a week day</prompt>
+    </field>
+    
+    <field name="returning">
+      <grammar src="grammars/lab4.xml#ReturnDate"/>
+      <prompt> when are you returning? </prompt>
+      <prompt count="2"> please choose a week day</prompt>
+    </field>
+    
+    <field name="mealoption">
+      <grammar src="grammars/lab4.xml#Food"/>
+      <prompt> please choose a food option for your flight. the vegan option is also gluten free. </prompt>
+      <prompt count="2"> the options are meat, fish, vegetarian or vegan. </prompt>
+    </field>
+    
+    <filled>
+      <assign name="from" expr="departure"/>
+      <assign name="to" expr="destination"/>
+      <if cond="from==to">
+	<prompt> you cannot fly to the same city you are leaving from. let's go back again. </prompt>
+	<goto next="#trip"/>
+      </if>
+      <assign name="day" expr="date"/>
+      <assign name="ret" expr="returning"/>
+      <assign name="meal" expr="mealoption"/>
+      <goto next="#confirm"/>
+    </filled>
+  </form>
+
+  <form id="confirm">
+    <field name="conf">
+      <prompt>
+	Ok, so you are travelling from <value expr="from"/> to <value expr="to"/> on <value expr="day"/> and returning on <value expr="ret"/> 
+	with a <value expr="meal"/> option as a meal. <break/> Could you confirm with yes or no?
+      </prompt>
+      <option> yes </option>
+      <option> no </option>
+    </field>
+    
+    <filled>
+      <if cond="conf == 'yes'">
+	<goto nextitem="booked"/>
+	<elseif cond="conf =='no'"/>
+	<prompt> ok, let's go back to the start </prompt>
+	<goto next="#trip"/>
+      </if>
+    
+    </filled>
+    <block name="bookedflight">
+      <prompt> Your flight has been succesfully booked. Thank you for using our services. Have a nice day! </prompt>
+    </block>
+  </form>
+
+  <link next="lab4"> 
+    <grammar mode="voice" version="1.0" root="root">
+      <rule id="root" scope="public">
+	<one-of>
+	<item> menu </item>
+    <item> start </item>
+        </one-of>
+      </rule>
+    </grammar>
+  </link>
+
+</vxml>
