@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="init">
+
+  <rule id="intro" scope="public">
+    <one-of>
+      <item>
+	<ruleref uri="#Origin"/><tag>out=rules.Origin;</tag> 
+      </item>
+      <item>
+	<ruleref uri="#Des"/><tag>out=rules.Des;</tag>
+      </item>
+      <item>
+	<ruleref uri="#DepartureDate"/><tag>out=rules.DepartureDate;</tag>
+      </item>
+      <item>
+	<ruleref uri="#ReturnDate"/><tag>out=rules.ReturnDate;</tag>
+      </item>
+      <item>
+	<ruleref uri="#Food"/><tag>out=rules.Food;</tag>
+      </item>
+
+
+
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#Des"/>
+	<tag> out.departure = rules.Origin; out.destination = rules.Des;</tag>
+      </item>
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#Des"/><ruleref uri="#DepartureDate"/>
+	<tag> out.departure = rules.Origin; out.destination = rules.Des; out.date = rules.DepartureDate;</tag>
+      </item>
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#DepartureDate"/>
+	<tag> out.departure = rules.Origin; out.date = rules.DepartureDate; </tag>
+      </item>
+      
+      <item> 
+	<ruleref uri="#DepartureDate"/><ruleref uri="#ReturnDate"/>
+	<tag> out.date = rules.DepartureDate; out.returning = rules.ReturnDate;</tag>
+      </item>
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#Des"/><ruleref uri="#DepartureDate"/><ruleref uri="#ReturnDate"/>
+	<tag> out.departure = rules.Origin; out.destination = rules.Des; out.date = rules.DepartureDate; out.returning = rules.ReturnDate;</tag>
+      </item>
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#Des"/><ruleref uri="#Food"/>
+	<tag> out.departure = rules.Origin; out.destination = rules.Des; out.mealoption = rules.Food;</tag>
+      </item>
+      
+      <item>
+	<ruleref uri="#Origin"/><ruleref uri="#Food"/>
+	<tag> out.departure = rules.Origin; out.mealoption = rules.Food;</tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="Origin">
+    <one-of>
+      <item>departing from</item>
+      <item>going from</item>
+      <item>go from</item>
+      <item>leaving from </item>
+      <item>from</item>
+    </one-of>
+    <ruleref uri="#City"/><tag>out=rules.City;</tag>
+  </rule>
+
+  <rule id="Des">
+    <one-of> 
+      <item>to</item>
+      <item>travelling to</item>
+      <item>going to</item>
+      <item>flying to</item>
+    </one-of>
+    <ruleref uri="#City"/><tag>out=rules.City</tag>
+  </rule>
+
+  <rule id="DepartureDate">
+    <one-of>
+      <item> on </item>
+      <item> leaving on </item>
+      <item> leaving </item>
+      <item> from </item>
+    </one-of>
+    <ruleref uri="#WeekDay"/><tag>out=rules.WeekDay</tag>
+  </rule>
+
+  <rule id="ReturnDate">
+    <one-of>
+      <item> returning on </item>
+      <item> returning </item>
+      <item> to </item>
+      <item> until </item>
+    </one-of>
+    <ruleref uri="#WeekDay"/><tag>out=rules.WeekDay</tag>
+  </rule>
+  
+
+  <rule id="City">
+    <one-of>
+      <item>seville<tag>out="seville";</tag></item>
+      <item>chicago<tag>out="chicago";</tag></item>
+      <item>paris<tag>out="paris";</tag></item>
+      <item>oslo<tag>out="oslo";</tag></item>
+      <item>gothenburg<tag>out="gothenburg";</tag></item>
+      <item>berlin<tag>out="berlin";</tag></item>
+      <item>tokyo<tag>out="tokyo";</tag></item>
+      <item>madrid<tag>out="madrid";</tag></item>
+      <item>new york<tag>out="new york";</tag></item>
+    </one-of>
+  </rule>
+
+  <rule id="WeekDay">
+    <one-of>
+      <item>Monday<tag>out="monday";</tag></item>
+      <item>Tuesday<tag>out="tuesday";</tag></item>
+      <item>Wednesday<tag>out="wednesday";</tag></item>
+      <item>Thursday<tag>out="thursday";</tag></item>
+      <item>Friday<tag>out="friday";</tag></item>
+      <item>Saturday<tag>out="saturday";</tag></item>
+      <item>Sunday<tag>out="sunday";</tag></item>
+    </one-of>
+  </rule>
+
+     <!-- OPTIONAL SERVICE -->
+
+  <rule id="Food">
+    <one-of>
+      <item>Meat<tag>out="meat";</tag></item>
+      <item>Vegetarian<tag>out="vegetarian";</tag></item>
+      <item>Fish<tag>out="fish";</tag></item>
+      <item>Vegan<tag>out="vegan";</tag></item>
+    </one-of>
+  </rule>
+
+</grammar>
