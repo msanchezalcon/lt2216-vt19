@@ -38,6 +38,20 @@ def lab4():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/lab4delayedflights')
+def lab4delayedflights():
+    vxml = render_template('lab4delayedflights.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
+@app.route('/lab4bookflight')
+def lab4bookflight():
+    vxml = render_template('lab4bookflight.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/lab5')
 def lab5():
     vxml = render_template('lab5.xml')
